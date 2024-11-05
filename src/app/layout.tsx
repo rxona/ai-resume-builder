@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { NavMenu } from "@/components/home-page";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +30,33 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex flex-col min-h-screen">
+          <header className="border-b">
+            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+              <h1 className="text-2xl font-bold">ResumeBuilder</h1>
+              <NavMenu />
+            </div>
+          </header>
+
+          <main className="flex-grow container mx-auto px-4 py-8">
+            {children}
+          </main>
+
+          <footer className="border-t mt-8">
+            <div className="container mx-auto px-4 py-6 text-center text-sm text-gray-500">
+              <p>&copy; 2024 ResumeBuilder. All rights reserved.</p>
+              <nav className="mt-2">
+                <Link href="/terms" className="hover:underline">
+                  Terms of Service
+                </Link>
+                <span className="mx-2">|</span>
+                <Link href="/privacy" className="hover:underline">
+                  Privacy Policy
+                </Link>
+              </nav>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );
