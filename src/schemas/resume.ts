@@ -24,7 +24,7 @@ export const resumeSchema = z.object({
   experiences: z.array(
     z.object({
       jobTitle: z.string(),
-      entity_name: z.string().describe("Company or project name."),
+      entityName: z.string().describe("Company or project name."),
       startDate: monthYearSchema,
       endDate: endDateSchema,
       accomplishments: z.array(z.string()),

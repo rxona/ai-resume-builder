@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PersonalDetails } from "./personal-details";
+import { Experience } from "./experience";
 
 export function FormTabs() {
   return (
@@ -13,7 +14,9 @@ export function FormTabs() {
       <TabsContent value="account">
         <PersonalDetails />
       </TabsContent>
-      <TabsContent value="experience">Change your password here.</TabsContent>
+      <TabsContent value="experience">
+        <Experience />
+      </TabsContent>
       <TabsContent value="education">Change your password here.</TabsContent>
       <TabsContent value="skills">Change your password here.</TabsContent>
     </Tabs>

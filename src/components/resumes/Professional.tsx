@@ -36,7 +36,7 @@ export default function ProfessionalResume({ data }: { data: Resume }) {
             {data.experiences.map((exp, i) => (
               <div key={i} className="mb-4">
                 <p className="font-bold text-gray-800">
-                  {exp.jobTitle}, {exp.entity_name}
+                  {exp.jobTitle}, {exp.entityName}
                 </p>
                 <p className="text-gray-600 italic">
                   {exp.startDate.month}/{exp.startDate.year} -{" "}

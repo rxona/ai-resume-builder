@@ -7,8 +7,8 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { FormTabs } from "./components/form-tabs";
-import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
+import { EnhanceButton } from "./components/enhance-button";
+import { DownloadButton } from "./components/download-button";
 
 function NewResume() {
   return null;
@@ -48,11 +48,6 @@ export default function NewResumePage() {
 
   return initialResume ? (
     <>
-      <div className="flex justify-end mb-4">
-        <Button>
-          <Sparkles /> Enhance
-        </Button>
-      </div>
       <div className="grid grid-cols-2 gap-4">
         <FormProvider
           validationSchema={resumeSchema}
@@ -60,8 +55,14 @@ export default function NewResumePage() {
           onSubmit={() => {}}
           beforeForm={<ResumeViewer />}
         >
-          <FormTabs />
-          <NewResume />
+          <div>
+            <div className="flex justify-end space-x-2 mb-4">
+              <DownloadButton />
+              <EnhanceButton />
+            </div>
+            <FormTabs />
+            <NewResume />
+          </div>
         </FormProvider>
       </div>
     </>
